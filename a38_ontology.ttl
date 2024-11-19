@@ -1,0 +1,29 @@
+@prefix a38: <https://github.com/lettis/a38/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+a38:Execution rdfs:comment "An execution of a given process." ;
+    a38:currentStep a38:Step ;
+    a38:definedBy a38:Process ;
+    a38:endedAt xsd:dateTime ;
+    a38:runBy a38:User ;
+    a38:startedAt xsd:dateTime .
+
+a38:Process rdfs:comment "A process description." ;
+    a38:createdAt xsd:dateTime ;
+    a38:createdBy a38:User ;
+    a38:description a38:text ;
+    a38:lastModifiedAt xsd:dateTime ;
+    a38:startsWith a38:Step .
+
+a38:User rdfs:comment "A user, who might define or execute processes." ;
+    a38:email xsd:string .
+
+a38:text a xsd:string ;
+    rdfs:comment "A type derived from XSD::string to define a long text." .
+
+a38:Step rdfs:label xsd:string ;
+    rdfs:comment "A single process step to be performed." ;
+    a38:description a38:text ;
+    a38:next a38:Step .
+

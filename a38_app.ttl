@@ -1,0 +1,21 @@
+@prefix a38: <https://github.com/lettis/a38/ontology#> .
+@prefix app: <https://github.com/lettis/a38/app#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ui: <https://github.com/lettis/a38/ui-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+app:ProcessScreen a ui:Screen ;
+    rdfs:label "processes" ;
+    ui:binding "p" .
+
+app:UserScreen a ui:Screen ;
+    rdfs:label "user" ;
+    ui:binding "u" ;
+    ui:contains [ a ui:Placement ;
+            ui:forWidget app:UserForm ;
+            ui:position 1 ] .
+
+app:UserForm a ui:Form ;
+    ui:forEntity a38:User ;
+    ui:forSingleton true .
+

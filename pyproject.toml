@@ -1,0 +1,25 @@
+[project]
+name = "A38"
+version = "0.0.1"
+description = "A38 - Process Management"
+authors = [
+  { name = "Florian Sittel", email = "sittel@lettis.net" },
+]
+requires-python = ">=3.11"
+dependencies = [
+  "rdflib",
+  "textual"
+]
+urls.homepage = "https://github.com/lettis/a38"
+
+[tool.ruff]
+line-length = 79
+
+lint.select = [ "I", "RUF", "UP" ]
+lint.isort.combine-as-imports = true
+lint.isort.force-sort-within-sections = true
+
+[tool.mypy]
+install_types = true
+non_interactive = true
+strict = true

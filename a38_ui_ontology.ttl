@@ -1,0 +1,20 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ui: <https://github.com/lettis/a38/ui-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ui:Form a ui:Widget ;
+    rdfs:comment "An input form container" ;
+    ui:exceptAttribute xsd:anyURI ;
+    ui:forEntity xsd:anyURI ;
+    ui:forSingleton xsd:boolean .
+
+ui:Screen rdfs:comment "A full-size screen object" ;
+    ui:binding xsd:string ;
+    ui:contains ui:Placement .
+
+ui:Placement rdfs:comment "Placement information of a widget." ;
+    ui:forWidget ui:Widget ;
+    ui:order xsd:integer .
+
+ui:Widget rdfs:comment "Any kind of UI widget" .
+
